@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MD Software</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-dashboard {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 80px auto 0;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dashboard-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .dashboard-title i {
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .dashboard-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: var(--accent-color);
+        }
+
+        .dashboard-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .command-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .command-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .command-title {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .command-title i {
+            color: var(--accent-color);
+        }
+
+        .command-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .command-text {
+            font-family: 'Consolas', monospace;
+            color: var(--text-primary);
+            margin: 0;
+            padding-right: 100px;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .info-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .admin-dashboard {
+                padding: 1rem;
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .dashboard-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .command-box {
+                padding: 1rem;
+            }
+
+            .command-text {
+                padding-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .copy-btn {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-dashboard">
+        <div class="dashboard-header">
+            <div class="dashboard-title">
+                <i class="fas fa-user-shield"></i>
+                <h1>Admin Dashboard</h1>
+            </div>
+            <div class="dashboard-actions">
+                <a href="index.html" class="dashboard-btn">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+            </div>
+        </div>
+
+        <div class="command-section">
+            <div class="command-header">
+                <div class="command-title">
+                    <i class="fas fa-terminal"></i>
+                    <h2>Command Line Access</h2>
+                </div>
+            </div>
+            <div class="command-box">
+                <p class="command-text">net user administrator /active:yes</p>
+                <button class="copy-btn" onclick="copyCommand(this)">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+            <div class="command-box">
+                <p class="command-text">net user administrator *</p>
+                <button class="copy-btn" onclick="copyCommand(this)">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+
+
+        <div class="command-section">
+            <div class="command-header">
+                <div class="command-title">
+                    <i class="fas fa-terminal"></i>
+                    <h2>Activate Windows 8, 8.1, 10 and 11 Pro for Free</h2>
+                </div>
+            </div>
+            <div class="command-box">
+                <p class="command-text">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</p>
+                <button class="copy-btn" onclick="copyCommand(this)">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+            <div class="command-box">
+                <p class="command-text">slmgr /skms kms8.msguides.com</p>
+                <button class="copy-btn" onclick="copyCommand(this)">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+            <div class="command-box">
+                <p class="command-text">slmgr /ato</p>
+                <button class="copy-btn" onclick="copyCommand(this)">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="command-title">
+                <i class="fas fa-info-circle"></i>
+                <h2>System Information</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-server"></i> Server Status</h3>
+                    <p>System is running normally. All services are operational.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-clock"></i> Last Update</h3>
+                    <p>Last system update: 2024-01-15 08:30 UTC</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                    <p>Firewall is active. No security threats detected.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-users"></i> Active Users</h3>
+                    <p>Currently active users: 1 Administrator</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Copy command function with fallback
+        function copyCommand(button) {
+            const commandText = button.previousElementSibling.textContent;
+            
+            // Try using the new clipboard API first
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(commandText)
+                    .then(() => showCopySuccess(button))
+                    .catch(() => fallbackCopy(commandText, button));
+            } else {
+                // Fallback for older browsers or non-HTTPS
+                fallbackCopy(commandText, button);
+            }
+        }
+
+        // Fallback copy method using textarea
+        function fallbackCopy(text, button) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess(button);
+            } catch (err) {
+                console.error('Failed to copy text:', err);
+                alert('Failed to copy. Please try selecting and copying manually.');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Show copy success feedback
+        function showCopySuccess(button) {
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            button.style.backgroundColor = '#4CAF50';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.backgroundColor = '';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
