@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Software - Windows Desktop Applications</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-desktop"></i>
+                <span>MD Software</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to MD Software</h1>
+                <p>Powerful Windows Desktop Applications for Your Needs</p>
+                <a href="#products" class="cta-button">Explore Our Products</a>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <i class="fas fa-compact-disc"></i>
+                    <h3>MD ISO</h3>
+                    <p>Create and manage ISO files with ease</p>
+                    <a href="http://mdsoft.rf.gd/files/MD_iso.zip" class="download-button" target="_blank">Download</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Drag Convert Mp3</h3>
+                    <p>Convert audio files by simple drag and drop</p>
+                    <a href="http://mdsoft.rf.gd/files/Drag_convert_mp3.zip" class="download-button" target="_blank">Download</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-folder"></i>
+                    <h3>Show Hidden Files</h3>
+                    <p>Reveal and manage hidden system files</p>
+                    <a href="http://mdsoft.rf.gd/files/Show_hidden_files.zip" class="download-button" target="_blank">Download</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-image"></i>
+                    <h3>Png 2 Ico</h3>
+                    <p>Convert PNG images to ICO format</p>
+                    <a href="http://mdsoft.rf.gd/files/Png_2_ico.zip" class="download-button" target="_blank">Download</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Rename Multiple Files</h3>
+                    <p>Batch rename files with powerful patterns</p>
+                    <a href="http://mdsoft.rf.gd/files/Rename_multiple_files.zip" class="download-button" target="_blank">Download</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="proposals" class="proposals">
+            <h2>Free Software Package</h2>
+            <div class="proposal-grid">
+                <div class="proposal-card featured">
+                    <div class="proposal-badge">100% FREE</div>
+                    <div class="proposal-header">
+                        <h3>Complete Package</h3>
+                        <div class="price">FREE</div>
+                    </div>
+                    <div class="proposal-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> MD ISO</li>
+                            <li><i class="fas fa-check"></i> Drag Convert Mp3</li>
+                            <li><i class="fas fa-check"></i> Show Hidden Files</li>
+                            <li><i class="fas fa-check"></i> Png 2 Ico</li>
+                            <li><i class="fas fa-check"></i> Rename Multiple Files</li>
+                            <li><i class="fas fa-check"></i> Free Updates</li>
+                            <li><i class="fas fa-check"></i> Community Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="proposal-note">
+                <i class="fas fa-heart"></i>
+                <p>All our software is completely free and open for everyone to use. No hidden costs, no subscriptions, just great tools for your needs!</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>MD Software is dedicated to creating high-quality Windows desktop applications that make your life easier. Our team of experienced developers ensures that each product meets the highest standards of performance and user experience.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Feel free to reach out to us at: <a href="mailto:ahmed.dz.com@gmail.com">ahmed.dz.com@gmail.com</a></p>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <textarea id="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+                <div id="formStatus" class="form-status"></div>
+            </div>
+        </section>
+
+        <section class="verify-section">
+            <div class="verify-container">
+                <h3>Access Verification</h3>
+                <div class="verify-box">
+                    <input type="text" id="verifyCode" placeholder="Enter access code...">
+                    <button onclick="verifyCode()" class="verify-button">Verify</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>MD Software</h4>
+                <p>Creating powerful Windows desktop applications.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MD Software. All rights reserved. _ by ahmed.limam</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
